@@ -69,12 +69,15 @@ response = requests.post(url, headers=headers, data=json_data)
 
 # Check if the request was successful
 if response.status_code == 200:
-    print("Request successful.")
-    # Do something with the response, e.g., parse it or check for available apartments
     data = response.json()
-    print(json.dumps(data, indent=2))
+    if data["data"]["housings"]["housingRentalObjects"]:
+        print("HOUSING_RENTAL_OBJECTS_AVAILABLE")
+    else:
+        print("NO_HOUSING_RENTAL_OBJECTS_AVAILABLE")
 else:
-    print(f"Request failed with status code: {response.status_code} and message: {response.text}")
+    print("REQUEST_FAILED")
+
+
 
 # Example function to check for availability
 def check_availability(data):
