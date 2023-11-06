@@ -1,6 +1,7 @@
 name: Run Python Script Daily
 
 on:
+  push:
   schedule:
     - cron: '0 8,20 * * *'
 
