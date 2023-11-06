@@ -81,15 +81,3 @@ if response.status_code == 200:
 # At the end of your script
 print(status)
 
-
-
-
-# Example function to check for availability
-def check_availability(data):
-    for housing in data['data']['housings']['housingRentalObjects']:
-        if housing['isAvailable']:
-            print(f"Apartment {housing['rentalObjectId']} is available from {housing['availableFrom']} to {housing['availableTo']}.")
-
-# Run the check availability function
-if response.status_code == 200:
-    check_availability(response.json())
