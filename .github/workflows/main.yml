@@ -28,6 +28,8 @@ jobs:
       id: run_script
       run: |
             echo "SCRIPT_OUTPUT=$(python main.py | tail -n 1)" >> $GITHUB_ENV
+      env:
+        API_URL: ${{ secrets.API_URL }}
 
     - name: Send Discord notification if housingRentalObjects are available
       if: env.SCRIPT_OUTPUT == 'HOUSING_RENTAL_OBJECTS_AVAILABLE'
