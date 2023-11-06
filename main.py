@@ -67,15 +67,20 @@ json_data = json.dumps(payload)
 # Make the POST request to the GraphQL endpoint
 response = requests.post(url, headers=headers, data=json_data)
 
-# Check if the request was successful
+# At the start of your script
+status = "REQUEST_FAILED"
+
+# After checking availability
 if response.status_code == 200:
     data = response.json()
     if data["data"]["housings"]["housingRentalObjects"]:
-        print("HOUSING_RENTAL_OBJECTS_AVAILABLE")
+        status = "HOUSING_RENTAL_OBJECTS_AVAILABLE"
     else:
-        print("NO_HOUSING_RENTAL_OBJECTS_AVAILABLE")
-else:
-    print("REQUEST_FAILED")
+        status = "NO_HOUSING_RENTAL_OBJECTS_AVAILABLE"
+
+# At the end of your script
+print(status)
+
 
 
 
