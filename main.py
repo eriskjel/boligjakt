@@ -1,8 +1,9 @@
 import requests
 import json
+import os
 
 # The URL of the GraphQL API
-url = "https://as-portal-api-prodaede2914.azurewebsites.net/graphql"
+url = os.getenv('API_URL')
 
 # The headers for the request
 headers = {
