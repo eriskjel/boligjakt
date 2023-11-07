@@ -51,14 +51,14 @@ payload = {
     """,
     "variables": {
         "input": {
-            "location": [{"parent": "Trondheim", "children": ["Lerkendal"]}],
-            "availableMaxDate": "2024-05-06T00:00:00.000Z",
+            "location": [{"parent": "Trondheim", "children": ["Moholt", "Lerkendal"]}],
+            "availableMaxDate": "2024-01-07T00:00:00.000Z",
             "includeFilterCounts": True,
             "offset": 0,
             "pageSize": 10,
-            "residenceCategories": ["2rompar"],
-            "showUnavailable": True
-        }
+            "residenceCategories": ["2-roms"],
+            "showUnavailable": False
+    }
     }
 }
 
