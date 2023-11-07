@@ -38,11 +38,3 @@ jobs:
         DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
       with:
         args: 'Housing rental objects are now available!'
-
-    - name: Send Discord notification if no housingRentalObjects are available
-      if: env.SCRIPT_OUTPUT == 'NO_HOUSING_RENTAL_OBJECTS_AVAILABLE'
-      uses: Ilshidur/action-discord@0.3.2
-      env:
-        DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
-      with:
-        args: 'No housing rental objects at this time.'
